@@ -190,7 +190,7 @@
 | ---------------------------- | ------------------------------------------------------ | ------------------ |
 | `logs.accessKey.password`    | Logs Access Key                                        | `minio`            |
 | `logs.secretKey.password`    | Logs Secret Key                                        | `minio123`         |
-| `logs.minio.enabled`         | Switch to enable or disable the Minio helm chart       | `true`             |
+| `logs.minio.enabled`         | Switch to use the helm chart's  minio                  | `true`             |
 | `logs.externalMinio.enabled` | Switch to enable or disable an external Minio instance | `false`            |
 | `logs.externalMinio.host`    | External Minio Host                                    | `localhost`        |
 | `logs.externalMinio.port`    | External Minio Port                                    | `9000`             |
@@ -205,7 +205,9 @@
 
 | Name                       | Description      | Value      |
 | -------------------------- | ---------------- | ---------- |
+| `minio.enabled`            | Switch to enable or disable the Minio helm chart | `true` |
 | `minio.accessKey.password` | Minio Access Key | `minio`    |
 | `minio.secretKey.password` | Minio Secret Key | `minio123` |
+
 
 
