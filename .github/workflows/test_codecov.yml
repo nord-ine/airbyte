@@ -14,6 +14,6 @@ jobs:
         run: pip install -r requirements.txt
       - name: Run tests and collect coverage
         run: |
-          invoke test braintree
+          invoke test -c braintree
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v2
