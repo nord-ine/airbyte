@@ -74,7 +74,9 @@ def get_connectors_names() -> Set[str]:
     for name in glob("source-*"):
         if os.path.exists(os.path.join(name, "setup.py")) and os.path.exists(os.path.join(name, "unit_tests")):
             if not name.endswith("-singer"):  # There are some problems with those. The optimal way is to wait until it's replaced by CDK.
-                names.add(name.split("source-", 1)[1].rstrip())
+                new_name = name.split("source-", 1)[1].rstrip()
+                if new_name in ["salesforce", "braintree"]:
+                    names.add(new_name)
 
     os.chdir(cur_dir)
     return names
