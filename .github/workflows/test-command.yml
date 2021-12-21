@@ -116,6 +116,9 @@ jobs:
             **/${{ github.event.inputs.connector }}/htmlcov/**
           retention-days: 3
 
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v2
+
       - name: Report Status
         if: github.ref == 'refs/heads/master' && always()
         run: ./tools/status/report.sh ${{ github.event.inputs.connector }} ${{github.repository}} ${{github.run_id}} ${{steps.test.outcome}}
