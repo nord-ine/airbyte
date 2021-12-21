@@ -75,7 +75,7 @@ def get_connectors_names() -> Set[str]:
         if os.path.exists(os.path.join(name, "setup.py")) and os.path.exists(os.path.join(name, "unit_tests")):
             if not name.endswith("-singer"):  # There are some problems with those. The optimal way is to wait until it's replaced by CDK.
                 new_name = name.split("source-", 1)[1].rstrip()
-                if new_name in ["salesforce", "braintree"]:
+                if new_name in ["facebook-marketing", "braintree"]:
                     names.add(new_name)
 
     os.chdir(cur_dir)
